@@ -18,8 +18,8 @@ class car:
 
 class trip:
     def __init__(self, dist, speed, car):
-        self.dist = dist
-        self.speed = speed
+        self.dist = int(dist)
+        self.speed = int(speed)
         self.car = car
 
     def trip_consumption(self):

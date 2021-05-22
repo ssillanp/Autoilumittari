@@ -3,23 +3,26 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
+from flask import Flask, render_template, request
 from tripdata import car, trip
 
-def menu():
-    print("Valitse auto [A, B tai C] ")
-    carn = input("->: ")
-    print("Anna matkan pituus (km): ")
-    dist = int(input("->: "))
-    print("Anna keskinopeus (km/h): ")
-    speed = int(input("->: "))
-    return carn, dist, speed
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/results")
+def results():
+    trp = trip(request.args.get('dist'), request.args.get('speed'), car(request.args.get('car')))
+    h, m, s = trp.trip_duration()
+    return f"Matka kestää {h}h {m}min {s}s ja polttoainetta kuluu {trp.trip_consumption()} litraa."
+
+
+
 
 def main():
-    carn, dist, speed = menu()
-    trp = trip(dist, speed, car(carn))
-    h, m, s = trp.trip_duration()
-    print(f"Nopeudella {speed} km/h, {dist} km matka kestää {h} tuntia {m} minuuttia ja {s} sekuntia")
-    print(f"Autolla {carn} tällä matkalla polttoainetta kuluu {trp.trip_consumption()} litraa")
+    app.run()
 
 
 # Press the green button in the gutter to run the script.
