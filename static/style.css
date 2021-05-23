@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  background-color: #e0e3dc;
+  background-image: url("/static/road.jpg");
+  background-repeat:no-repeat;
+  background-position: center center;
+  padding-top: 40px;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: black;
+  margin-left: 20px;
+  text-align: center;
+
+}
+
+input {
+   color: black;
+   border-radius: 5px;
+   border-color: green;
+
+}
+
+label {
+   color: black;
+
+}

@@ -14,15 +14,15 @@ def index():
 
 @app.route("/results")
 def results():
-    trp = trip(request.args.get('dist'), request.args.get('speed'), car(request.args.get('car')))
-    h, m, s = trp.trip_duration()
-    return f"Matka kestää {h}h {m}min {s}s ja polttoainetta kuluu {trp.trip_consumption()} litraa."
+    trp1 = trip(request.args.get('dist'), request.args.get('speed1'), car(request.args.get('car')))
+    trp2 = trip(request.args.get('dist'), request.args.get('speed2'), car(request.args.get('car')))
+    return render_template('results.html', data=[trp1, trp2])
 
 
 
 
 def main():
-    app.run()
+    app.run(debug=True)
 
 
 # Press the green button in the gutter to run the script.

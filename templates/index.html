@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Solidabis Koodihaaste kulutuslaskuri</title>
+    <title>Kulutuslaskuri</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<h>Laske mökkimatkasi polttoaineenkulutus</h><br>
+<h1>Laske mökkimatkasi polttoaineenkulutus</h1><br>
+Vertaile polttoaineenkulutusta ja matkaan vaadittavaa aikaa eri matkanopeuksilla.<br>
+Valittavissasi on kolme erilaista autotyyppiä:<br>
+Eko.....n.6.2 l / 100km (80 kmh)<br>
+Normi...n.7.2 l / 100km (80 kmh)<br>
+Öky.....n.8.2 l / 100km (80 kmh)<br>
 <br>
 Valitse auto
 <form action="/results">
-    <input type="radio" id="carA" name="car" value="A">
-    <label for="carA">Small</label><br>
-    <input type="radio" id="carB" name="car" value="B">
-    <label for="carB">Medium</label><br>
-    <input type="radio" id="carC" name="car" value="C">
-    <label for="carC">Large</label><br>
     <br>
-    <label for="dist">Distance</label><br>
+    <input type="radio" id="carA" name="car" value="A">
+    <label for="carA">Eko</label>
+    <input type="radio" id="carB" name="car" value="B">
+    <label for="carB">Normi</label>
+    <input type="radio" id="carC" name="car" value="C">
+    <label for="carC">Öky</label><br>
+    <br>
+    <label for="dist">Matkan pituus [km]</label><br>
     <input type="text" id="dist" name="dist"><br>
-    <label for="speed">Speed</label><br>
-    <input type="text" id="speed" name="speed"><br><br>
-    <input type="submit" value="Submit">
+    <label for="speed1">Keskinopues 1 [km/h]</label><br>
+    <input type="text" id="speed1" name="speed1"><br>
+    <label for="speed2">Keskinopeus 2 [km/h]</label><br>
+    <input type="text" id="speed2" name="speed2"><br><br>
+    <input type="submit" value="Laske">
 
 </form>
 </body>

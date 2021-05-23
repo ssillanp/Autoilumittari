@@ -22,10 +22,12 @@ class trip:
         self.speed = int(speed)
         self.car = car
 
+    @property
     def trip_consumption(self):
         speed_consumption = self.car.comsumption * 1.009 ** self.speed
         return round(speed_consumption * self.dist / 100, 2)
 
+    @property
     def trip_duration(self):
         trip_time = self.dist / self.speed
         return int(trip_time), int(trip_time%1*60), round(trip_time%1*60%1*60, 0)
