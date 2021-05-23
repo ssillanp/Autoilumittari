@@ -30,7 +30,7 @@ class trip:
     @property
     def trip_duration(self):
         trip_time = self.dist / self.speed
-        return int(trip_time), int(trip_time%1*60), round(trip_time%1*60%1*60, 0)
+        return int(trip_time), int(round(trip_time%1*60, 0))
 
     def __repr__(self):
         return f"trip({self.dist}, {self.car})"
