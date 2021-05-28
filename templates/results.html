@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="box a">A</div>
-        <div class="box b">B</div>
-        <div class="box c">C</div>
+        <div class="box a"></div>
+        <div class="box b"></div>
+        <div class="box c"></div>
         <div class="box d">
             <div class="app-wrapper">
                 <div class="appbox app1">
@@ -43,7 +43,7 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="submit"></td>
+                                <td><input type="submit" value="Laske"></td>
                                 
                             </tr>
                         </table>
@@ -69,16 +69,17 @@
                 
                 <div class="appbox app3">
                     <img src="/static/path904.png" alt="">
-                    <p>Käyttämällä hitaampaa matkanopeutta</p>
-                    <ul>
-                        <li>Aiheutat CO2 päästöjä <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän</li>
-                        <li>Säästät polttoainekuluissa <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span></li>
-                    </ul>
+                    <h3>Pienemmällä nopeudella</h3>
+
+                    <p>Aiheutat CO<sub>2</sub> päästöjä <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän</p>
+                    <p>Säästät polttoainekuluissa <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span></p>
+
+
                 </div>
                 
             </div>
         </div>
-        <div class="box e">E</div>
+        <div class="box e">(c) by samisil</div>
 
 
     </div>
