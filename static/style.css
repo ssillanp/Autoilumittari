@@ -22,7 +22,7 @@ td {
       position: relative;
       grid-template-columns: 60% 40%;
       /* grid-template-rows: 100px 500px auto; */
-      color: rgb(75,75,150);
+      color: rgb(100,152,0);
     }
 
   
@@ -60,7 +60,7 @@ td {
 
     .appbox {
       background-color: rgb(235,245,235);
-      border-radius: 15px;
+      border-radius: 0px;
       padding: 25px;
       font-size: large;
     }
@@ -81,6 +81,12 @@ td {
 
     .result {
         font-weight: bolder;
+    }
+
+    .errormsg {
+    background: red;
+    color: black;
+    font-size: x-large;
     }
 
    
