@@ -18,6 +18,10 @@ def results():
     trp2 = trip(request.args.get('dist'), request.args.get('speed2'), car(request.args.get('car')))
     return render_template('results.html', data=[trp1, trp2])
 
+@app.route("/test")
+def test():
+    return render_template('index.html')
+
 
 
 

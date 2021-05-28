@@ -2,35 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kulutuslaskuri</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
 </head>
 <body>
-<h1>Laske mökkimatkasi polttoaineenkulutus</h1><br>
-Vertaile polttoaineenkulutusta ja matkaan vaadittavaa aikaa eri matkanopeuksilla.<br>
-Valittavissasi on kolme erilaista autotyyppiä:<br>
-Eko.....n.6.2 l / 100km (80 kmh)<br>
-Normi...n.7.2 l / 100km (80 kmh)<br>
-Öky.....n.8.2 l / 100km (80 kmh)<br>
-<br>
-Valitse auto
-<form action="/results">
-    <br>
-    <input type="radio" id="carA" name="car" value="A">
-    <label for="carA">Eko</label>
-    <input type="radio" id="carB" name="car" value="B">
-    <label for="carB">Normi</label>
-    <input type="radio" id="carC" name="car" value="C">
-    <label for="carC">Öky</label><br>
-    <br>
-    <label for="dist">Matkan pituus [km]</label><br>
-    <input type="text" id="dist" name="dist"><br>
-    <label for="speed1">Keskinopues 1 [km/h]</label><br>
-    <input type="text" id="speed1" name="speed1"><br>
-    <label for="speed2">Keskinopeus 2 [km/h]</label><br>
-    <input type="text" id="speed2" name="speed2"><br><br>
-    <input type="image" src="/static/bttn.png" alt="Submit">
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">
+            <div class="app-wrapper">
+                <div class="appbox app1">
+                    <img src="/static/rect833.png" alt="">
+                    <p>Laske polttoaineen kulutus</p>
+                    <form action="/results">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    AUTO 
+                                </td>
+                                <td>
+                                    <input type="radio" id="carA" name="car" value="A"><label for="carA"> S</label>
+                                    <input type="radio" id="carB" name="car" value="B"><label for="carB"> M</label>
+                                    <input type="radio" id="carC" name="car" value="C"><label for="carC"> L</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="dist">Matkan pituus</label></td>
+                                <td><input type="text" id = "dist" name="dist"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="speed1">Käytetty keskinopeus 1</label></td>
+                                <td><input type="text" id="speed1" name="speed1"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="speed2">Käytetty keskinopeus 2</label></td>
+                                <td><input type="text" id="speed2" name="speed2"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit"></td>
+                                
+                            </tr>
+                        </table>
+                </form>
+                </div>
+                <div class="appbox app2">
+                    <img src="/static/path887.png" alt="">
 
-</form>
-</body>
+                </div>
+                
+                <div class="appbox app3">
+                    <img src="/static/path904.png" alt="">
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="box e">E</div>
+
+
+    </div>
+    </body>
 </html>

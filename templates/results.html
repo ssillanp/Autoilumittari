@@ -2,15 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kulutuslaskuri</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
 </head>
 <body>
-<h1>Laske mökkimatkasi polttoaineenkulutus</h1><br>
-<br>
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">
+            <div class="app-wrapper">
+                <div class="appbox app1">
+                    <img src="/static/rect833.png" alt="">
+                    <p>Laske polttoaineen kulutus</p>
+                    <form action="/results">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    AUTO 
+                                </td>
+                                <td>
+                                    <input type="radio" id="carA" name="car" value="A"><label for="carA"> S</label>
+                                    <input type="radio" id="carB" name="car" value="B"><label for="carB"> M</label>
+                                    <input type="radio" id="carC" name="car" value="C"><label for="carC"> L</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="dist">Matkan pituus</label></td>
+                                <td><input type="text" id = "dist" name="dist" value="{{data[0].dist}}"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="speed1">Käytetty keskinopeus 1</label></td>
+                                <td><input type="text" id="speed1" name="speed1" value="{{data[0].speed}}"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="speed2">Käytetty keskinopeus 2</label></td>
+                                <td><input type="text" id="speed2" name="speed2" value="{{data[1].speed}}"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit"></td>
+                                
+                            </tr>
+                        </table>
+                </form>
+                </div>
+                <div class="appbox app2">
+                    <img src="/static/path887.png" alt="">
+                    <ul>
+                        {{ data[0].speed }} km/h keskinopeudella
+                        <br>
+                        <li>matkaan kuluu: <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span></li>
+                        <li>polttoainetta kului: <span class="result">{{data[0].trip_consumption}} litraa</span></li>
+                        <br>
+                        {{ data[1].speed }} km/h keskinopeudella
+                        <br>
+                        <li>matkaan kului: <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min </span></li>
+                        <li>polttoainetta kului: <span class="result">{{data[1].trip_consumption}} litraa</span></li>
+                        <br>
+                        <li>Matka-ajan ero on: <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min </span></li>
+                        <li>Kulutusero on <span class="result">{{ data[0].fuel_diff(data[1]) }} litraa </span></li>
+                    </ul>
+                </div>
+                
+                <div class="appbox app3">
+                    <img src="/static/path904.png" alt="">
+                    <p>Käyttämällä hitaampaa matkanopeutta</p>
+                    <ul>
+                        <li>Aiheutat CO2 päästöjä <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän</li>
+                        <li>Säästät polttoainekuluissa <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div class="box e">E</div>
 
-Nopeudella {{data[0].speed}}km/h Matka kestää {{data[0].trip_duration[0]}}h {{data[0].trip_duration[1]}}min ja polttoainetta kuluu {{data[0].trip_consumption}} litraa.
-<br><br>
-Nopeudella {{data[1].speed}}km/h Matka kestää {{data[1].trip_duration[0]}}h {{data[1].trip_duration[1]}}min ja polttoainetta kuluu {{data[1].trip_consumption}} litraa.
-</body>
+
+    </div>
+    </body>
 </html>
