@@ -16,7 +16,7 @@
             <div class="app-wrapper">
                 <div class="appbox app1">
                     <img src="/static/laskuri_banner.png" alt="">
-                    <p>Vertaa mökkimatkasi polttoaineen kulutusta eri nopeuksilla!</p>
+                    <p class="apptxt">Vertaa mökkimatkasi polttoaineen kulutusta eri nopeuksilla!</p>
                     {% block errormsg%}
                     {% endblock %}
                     <form action="/results">
@@ -31,21 +31,27 @@
                                     <input type="radio" id="carC" name="car" value="C"><img src="/static/carC.png" alt="">
                                 </td>
                             </tr>
-                            {% block content1 %}
-                            {% endblock %}
+                             <div class="apptxt">
+                                {% block content1 %}
+                                {% endblock %}
+                             </div>
                         </table>
                 </form>
                 </div>
                 <div class="appbox app2">
                     <img src="/static/laskuri_tulos.png" alt="">
-                    {% block content2 %}
-                    {% endblock %}
+                    <div class="apptxt">
+                        {% block content2 %}
+                        {% endblock %}
+                    </div>
                 </div>
 
                 <div class="appbox app3">
                     <img src="/static/laskuri_info.png" alt="">
-                    {% block content3 %}
-                    {% endblock %}
+                    <div class="apptxt">
+                        {% block content3 %}
+                        {% endblock %}
+                    </div>
                 </div>
 
             </div>

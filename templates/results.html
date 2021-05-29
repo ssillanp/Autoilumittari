@@ -18,21 +18,14 @@
         </tr>
     {% endblock %}
     {% block content2 %}
-    <ul>
-        <span class="result">{{ data[0].speed }} km/h keskinopeudella</span>
+        <span class="result">{{ data[0].speed }} km/h </span>
+        keskinopeudella matka kestää <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span> polttoainetta kuluu <span class="result">{{data[0].trip_consumption}} litraa.</span>
         <br>
-        <li>matkaan kuluu: <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span>.</li>
-        <li>polttoainetta kului: <span class="result">{{data[0].trip_consumption}} litraa.</span></li>
+        <span class="result">{{ data[1].speed }} km/h </span>
+        keskinopeudella matka kestää <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min</span>. polttoainetta kuluu <span class="result">{{data[1].trip_consumption}} litraa.</span>
         <br>
-        <span class="result">{{ data[1].speed }} km/h keskinopeudella</span>
-        <br>
-        <li>matkaan kuluu: <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min</span>.</li>
-        <li>polttoainetta kului: <span class="result">{{data[1].trip_consumption}} litraa.</span></li>
-        <br>
-        <span class="result">Ajamalla hitaammin</span>
-        <li>Polttoainetta kuluu <span class="result">{{ data[0].fuel_diff(data[1])[0] }} litraa </span>vähemmän.</li>
-        <li>Matka kestää <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min</span> pidempään.</li>
-    </ul>
+        Ajamalla hitaammin polttoainetta kuluu <span class="result">{{ data[0].fuel_diff(data[1])[0] }} litraa </span>vähemmän.
+        ja matka kestää <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min</span> pidempään.
     {% endblock %}
 
     {% block content3 %}
