@@ -21,21 +21,26 @@
     <ul>
         <span class="result">{{ data[0].speed }} km/h keskinopeudella</span>
         <br>
-        <li>matkaan kuluu: <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span></li>
-        <li>polttoainetta kului: <span class="result">{{data[0].trip_consumption}} litraa</span></li>
+        <li>matkaan kuluu: <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span>.</li>
+        <li>polttoainetta kului: <span class="result">{{data[0].trip_consumption}} litraa.</span></li>
         <br>
         <span class="result">{{ data[1].speed }} km/h keskinopeudella</span>
         <br>
-        <li>matkaan kului: <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min </span></li>
-        <li>polttoainetta kului: <span class="result">{{data[1].trip_consumption}} litraa</span></li>
+        <li>matkaan kuluu: <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min</span>.</li>
+        <li>polttoainetta kului: <span class="result">{{data[1].trip_consumption}} litraa.</span></li>
         <br>
-        <li>Matka-ajan ero on: <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min </span></li>
-        <li>Kulutusero on <span class="result">{{ data[0].fuel_diff(data[1]) }} litraa </span></li>
+        <span class="result">Ajamalla hitaammin</span>
+        <li>Polttoainetta kuluu <span class="result">{{ data[0].fuel_diff(data[1])[0] }} litraa </span>vähemmän.</li>
+        <li>Matka kestää <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min</span> pidempään.</li>
     </ul>
     {% endblock %}
 
     {% block content3 %}
-    <h3>Pienemmällä nopeudella</h3>
-    <p>Aiheutat CO<sub>2</sub> päästöjä <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän</p>
-    <p>Säästät polttoainekuluissa <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span></p>
+        <h3>Pienemmällä nopeudella</h3>
+        <p>Aiheutat <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän CO<sub>2</sub>-päästöjä.
+        <br><br>
+        Säästät <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span> polttoainekuluissa.
+            <br><br>
+        Säästöä syntyy <span class="result">{{data[0].fuel_diff(data[1])[1]}} €</span> (95 - 1,6 €/l)
+        </p>
     {% endblock %}

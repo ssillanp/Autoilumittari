@@ -17,6 +17,9 @@ class car:
         return f"car({self.model})"
 
 class trip:
+
+    fuelprice = 1.60
+
     def __init__(self, dist, speed, car):
         self.dist = int(dist)
         self.speed = int(speed)
@@ -38,7 +41,8 @@ class trip:
 
 
     def fuel_diff(self, other):
-        return abs(round(self.trip_consumption - other.trip_consumption, 2))
+        diff = abs(round(self.trip_consumption - other.trip_consumption, 2))
+        return [diff, round(diff * self.fuelprice, 2)]
 
     def fuel_diff_prcent(self, other):
         if self.trip_consumption >= other.trip_consumption:

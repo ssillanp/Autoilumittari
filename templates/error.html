@@ -1,24 +1,16 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
     {% block errormsg %}
         <p class="errormsg">Täytä kaikki arvot oikein!</p>
     {% endblock %}
-    {% block content1 %}
-        <tr>
-            <td><label for="dist">Matkan pituus</label></td>
-            <td><input type="text" id = "dist" name="dist" size="14"> km</td>
-        </tr>
-        <tr>
-            <td><label for="speed1">Käytetty keskinopeus 1</label></td>
-            <td><input type="text" id="speed1" name="speed1" size="14"> km/h</td>
-        </tr>
-        <tr>
-            <td><label for="speed2">Käytetty keskinopeus 2</label></td>
-            <td><input type="text" id="speed2" name="speed2" size="14"> km/h</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Laske"></td>
 
-        </tr>
+    {% block content3 %}
+        <div class="errortxt">
+            <p>Kaikkien kenttien tulee olla täytetty
+                <br>
+                Auto pitää olla valittu
+                <br>
+                Matka ja nopeus tulee antaa kokonaislukuina.
+            </p>
+        </div>
     {% endblock %}
