@@ -31,9 +31,8 @@
     {% block content3 %}
         <h3>Pienemmällä nopeudella</h3>
         <p>Aiheutat <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän CO<sub>2</sub>-päästöjä.
-        <br><br>
-        Säästät <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span> polttoainekuluissa.
-            <br><br>
+            <br>
+        Säästät <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span> polttoainekuluissa. <br>
         Säästöä syntyy <span class="result">{{data[0].fuel_diff(data[1])[1]}} €</span> (95 - 1,6 €/l)
         </p>
     {% endblock %}
