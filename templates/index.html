@@ -30,12 +30,42 @@
     </form>
     {% endblock %}
 
+    {% block content2 %}
+        {% if result %}
+            <div class="appbox app2">
+
+                <img src="/static/laskuri_tulos.png" alt="">
+                <div class="apptxt">
+                    <span class="result">{{ data[0].speed }} km/h </span>
+                    keskinopeudella matka kestää <span class="result">{{data[0].trip_duration[1]}} h {{data[0].trip_duration[2]}} min</span> polttoainetta kuluu <span class="result">{{data[0].trip_consumption}} litraa.</span>
+                    <br>
+                    <span class="result">{{ data[1].speed }} km/h </span>
+                    keskinopeudella matka kestää <span class="result">{{data[1].trip_duration[1]}} h {{data[1].trip_duration[2]}} min</span>. polttoainetta kuluu <span class="result">{{data[1].trip_consumption}} litraa.</span>
+                    <br>
+                    Ajamalla hitaammin polttoainetta kuluu <span class="result">{{ data[0].fuel_diff(data[1])[0] }} litraa </span>vähemmän.
+                    ja matka kestää <span class="result">{{ data[0].time_diff(data[1])[0] }} h {{ data[0].time_diff(data[1])[1] }} min</span> pidempään.
+                </div>
+            </div>
+        {% else %}
+
+        {% endif%}
+    {% endblock %}
+
     {% block content3 %}
-        <h3>Vertaile</h3>
-        <p>Laskurilla voi verrata matkalla käytetyn nopeuden vaikutusta matka-aikaan ja polttoaineenkulutukseen</p>
-        <p> Käytettävissäsi on kolme kulutukseltaan erilaista autotyyppiä: <br>
-            - Pienikulutuksinen auto <br>
-            - Keskikulutuksinen auto <br>
-            - Suurikulutuksinen auto <br>
-        </p>
+        {% if result %}
+            <h3>Pienemmällä nopeudella</h3>
+            <p>Aiheutat <span class="result">{{data[0].carbon_diff(data[1])}} kg</span> vähemmän CO<sub>2</sub>-päästöjä.
+            <br>
+            Säästät <span class="result">{{data[0].fuel_diff_prcent(data[1])}} %</span> polttoainekuluissa. <br>
+            Säästöä syntyy <span class="result">{{data[0].fuel_diff(data[1])[1]}} €</span> (95 - 1,6 €/l)
+            </p>
+        {% else %}
+            <h3>Vertaile</h3>
+            <p>Laskurilla voi verrata matkalla käytetyn nopeuden vaikutusta matka-aikaan ja polttoaineenkulutukseen</p>
+            <p> Käytettävissäsi on kolme kulutukseltaan erilaista autotyyppiä: <br>
+                S - Pienikulutuksinen auto <br>
+                M - Keskikulutuksinen auto <br>
+                L - Suurikulutuksinen auto <br>
+            </p>
+        {% endif %}
     {% endblock %}

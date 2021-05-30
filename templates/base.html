@@ -17,8 +17,15 @@
                 <div class="appbox app1">
                     <img src="/static/laskuri_banner.png" alt="">
                     <h3 class="apptxt">Vertaa mökkimatkasi polttoaineen kulutusta!</h3>
-                    {% block errormsg%}
-                    {% endblock %}
+                    <div class="errormsg">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                              {% for category, message in messages %}
+                                  {{ message }}
+                              {% endfor %}
+                            {% endif %}
+                          {% endwith %}
+                    </div>
                     <table style="width: 100%;">
                             <div class="apptxt">
                                 {% block content1 %}
@@ -26,13 +33,8 @@
                             </div>
                     </table>
                 </div>
-                <div class="appbox app2">
-                    <img src="/static/laskuri_tulos.png" alt="">
-                    <div class="apptxt">
-                        {% block content2 %}
-                        {% endblock %}
-                    </div>
-                </div>
+                {% block content2 %}
+                {% endblock %}
 
                 <div class="appbox app3">
                     <img src="/static/laskuri_info.png" alt="">
