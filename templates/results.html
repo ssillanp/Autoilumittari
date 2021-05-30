@@ -1,20 +1,28 @@
 {% extends "base.html" %}
-    {% block content1 %}
+   {% block content1 %}
         <tr>
-            <td><label for="dist">Matkan pituus</label></td>
-            <td><input type="text" id = "dist" name="dist" size="14" value="{{data[0].dist}}"> km</td>
+            <td>{{ form.car.label }}</td>
+            <td>
+                {% for subfield in form.car %}
+                {{ subfield }} {{ subfield.label }}
+                {% endfor %}
+            </td>
         </tr>
         <tr>
-            <td><label for="speed1">Käytetty keskinopeus 1</label></td>
-            <td><input type="text" id="speed1" name="speed1" size="14" value="{{data[0].speed}}"> km/h</td>
+            <td>{{ form.dist.label }}</td>
+            <td>{{ form.dist(size=15) }}</td>
         </tr>
         <tr>
-            <td><label for="speed2">Käytetty keskinopeus 2</label></td>
-            <td><input type="text" id="speed2" name="speed2" size="14" value="{{data[1].speed}}"> km/h</td>
+            <td>{{ form.speed1.label }}</td>
+            <td>{{ form.speed1(size=15) }}</td>
         </tr>
         <tr>
-            <td></td>
-            <td><input type="submit" value="Laske"></td>
+            <td>{{ form.speed2.label }}</td>
+            <td>{{ form.speed2(size=15) }}</td>
+        </tr>
+        <tr>
+             <td></td>
+             <td>{{ form.submit }}</td>
         </tr>
     {% endblock %}
     {% block content2 %}

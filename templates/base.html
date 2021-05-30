@@ -19,24 +19,12 @@
                     <h3 class="apptxt">Vertaa mökkimatkasi polttoaineen kulutusta!</h3>
                     {% block errormsg%}
                     {% endblock %}
-                    <form action="/results">
-                        <table style="width: 100%;">
-                            <tr>
-                                <td>
-                                    AUTO
-                                </td>
-                                <td>
-                                    <input type="radio" id="carA" name="car" value="A"><img src="/static/carA.png" alt="">
-                                    <input type="radio" id="carB" name="car" value="B"><img src="/static/carB.png" alt="">
-                                    <input type="radio" id="carC" name="car" value="C"><img src="/static/carC.png" alt="">
-                                </td>
-                            </tr>
-                             <div class="apptxt">
+                    <table style="width: 100%;">
+                            <div class="apptxt">
                                 {% block content1 %}
                                 {% endblock %}
-                             </div>
-                        </table>
-                </form>
+                            </div>
+                    </table>
                 </div>
                 <div class="appbox app2">
                     <img src="/static/laskuri_tulos.png" alt="">
