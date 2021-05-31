@@ -11,7 +11,7 @@ class InputIntValidator:
     def __call__(self, form, field):
         # print(field.data)
         try:
-            if int(field.data) <=0:
+            if int(field.data) <= 0 or int(field.data) > 10000:
                 raise ValidationError(self.message)
         except ValueError:
             raise ValidationError(self.message)
