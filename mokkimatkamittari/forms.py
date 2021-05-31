@@ -5,15 +5,17 @@ from wtforms.validators import DataRequired, ValidationError, InputRequired
 
 class InputIntValidator:
     def __init__(self):
-        self.message = "Anna tiedot kokonaislukuina!"
+        self.message = "Tiedot positiivisina kokonaislukuina!"
 
 
     def __call__(self, form, field):
         # print(field.data)
         try:
-            int(field.data)
+            if int(field.data) <=0:
+                raise ValidationError(self.message)
         except ValueError:
             raise ValidationError(self.message)
+
 
 
 class TripDataForm(FlaskForm):
