@@ -3,16 +3,17 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, url_for, flash
 from tripdata import car, trip
 from forms import TripDataForm
+import os
 
 
 app = Flask(__name__)
-app.config.update(dict(
-    SECRET_KEY="POJKH876y8756kjHGihg675hjg(/&"
-))
 
+app.config.update(dict(
+    SECRET_KEY=os.environ.get('ML_APPKEY')
+))
 
 
 @app.route("/", methods=['GET', 'POST'])
