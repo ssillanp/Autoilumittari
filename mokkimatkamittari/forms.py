@@ -9,7 +9,7 @@ class InputIntValidator:
 
 
     def __call__(self, form, field):
-        print(field.data)
+        # print(field.data)
         try:
             int(field.data)
         except ValueError:
