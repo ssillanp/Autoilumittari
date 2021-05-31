@@ -23,6 +23,7 @@ def index():
     if form.validate_on_submit():
         trp1 = trip(form.dist.data, form.speed1.data, car(form.car.data))
         trp2 = trip(form.dist.data, form.speed2.data, car(form.car.data))
+
         data = [trp1, trp2]
         result = True
     else:

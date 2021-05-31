@@ -7,21 +7,21 @@
             <td>{{ form.car.label }}</td>
             <td>
                 {% for subfield in form.car %}
-                {{ subfield }} {{ subfield.label }}
+                {{ subfield }}<img src="{{ url_for('static', filename=subfield.label.text) }}" alt="">
                 {% endfor %}
             </td>
         </tr>
         <tr>
             <td>{{ form.dist.label }}</td>
-            <td>{{ form.dist(size=15) }}</td>
+            <td>{{ form.dist(size=20) }}</td>
         </tr>
         <tr>
             <td>{{ form.speed1.label }}</td>
-            <td>{{ form.speed1(size=15) }}</td>
+            <td>{{ form.speed1(size=20) }}</td>
         </tr>
         <tr>
             <td>{{ form.speed2.label }}</td>
-            <td>{{ form.speed2(size=15) }}</td>
+            <td>{{ form.speed2(size=20) }}</td>
         </tr>
         <tr>
              <td></td>
