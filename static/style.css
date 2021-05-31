@@ -1,9 +1,7 @@
 body {
     margin: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url("road.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
+    background: rgb(216, 216, 216);
     line-height: 1.8;
   }
 
