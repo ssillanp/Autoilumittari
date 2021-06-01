@@ -19,5 +19,4 @@ def index():
         if form.is_submitted():
             for key, value in form.errors.items():
                 flash(value[0])
-                break
     return render_template('index.html', form=form, result=result, data=data)

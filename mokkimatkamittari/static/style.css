@@ -104,6 +104,10 @@ td {
       background: rgb(255,225,225)
     }
 
+    input[type="radio"].field-error {
+      color: red;
+    }
+
 
 
 
