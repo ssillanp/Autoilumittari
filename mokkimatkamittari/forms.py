@@ -20,7 +20,8 @@ class InputIntValidator:
 
 
 class TripDataForm(FlaskForm):
-    car = RadioField('Auton tyyppi*', choices=[('A', "carA.png"), ('B', 'carB.png'), ('C', 'carC.png')], validators=[DataRequired('Valitse automalli!')])
+    car = RadioField('Auton tyyppi*', choices=[('A', "carA.png"), ('B', 'carB.png'), ('C', 'carC.png')], default='A',
+                                                validators=[DataRequired()])
     dist = StringField('Matkan pituus km*', validators=[DataRequired('Syötä matkan pituus'), InputIntValidator()])
     speed1 = StringField('Käytetty keskinopeus 1*', validators=[DataRequired('Syötä nopeus 1'), InputIntValidator()])
     speed2 = StringField('Käytetty keskinopeus 2*', validators=[DataRequired('Syötä nopeus 2'), InputIntValidator()])
