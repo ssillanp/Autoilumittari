@@ -5,22 +5,23 @@ from wtforms.validators import DataRequired, ValidationError, InputRequired
 
 class InputIntValidator:
     def __init__(self):
-        self.message = "Tiedot positiivisina kokonaislukuina!"
+        self.message = None
 
 
     def __call__(self, form, field):
         # print(field.data)
         try:
-            if int(field.data) <= 0 or int(field.data) > 10000:
-                raise ValidationError(self.message)
+            tst = int(field.data)
         except ValueError:
-            raise ValidationError(self.message)
+            raise ValidationError("Anna tiedot kokonaislukuina!")
+        if tst <=0 or tst > 10000:
+            raise ValidationError('Sallitut arvot 1 - 10000 !')
 
 
 
 class TripDataForm(FlaskForm):
-    car = RadioField('Auton tyyppi*', choices=[('A', "carA.png"), ('B', 'carB.png'), ('C', 'carC.png')], validators=[DataRequired()])
-    dist = StringField('Matkan pituus km*', validators=[DataRequired(), InputIntValidator()])
-    speed1 = StringField('Käytetty keskinopeus 1*', validators=[DataRequired(), InputIntValidator()])
-    speed2 = StringField('Käytetty keskinopeus 2*', validators=[DataRequired(), InputIntValidator()])
+    car = RadioField('Auton tyyppi*', choices=[('A', "carA.png"), ('B', 'carB.png'), ('C', 'carC.png')], validators=[DataRequired('Valitse automalli!')])
+    dist = StringField('Matkan pituus km*', validators=[DataRequired('Syötä matkan pituus'), InputIntValidator()])
+    speed1 = StringField('Käytetty keskinopeus 1*', validators=[DataRequired('Syötä nopeus 1'), InputIntValidator()])
+    speed2 = StringField('Käytetty keskinopeus 2*', validators=[DataRequired('Syötä nopeus 2'), InputIntValidator()])
     submit = SubmitField('Laske')
