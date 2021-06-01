@@ -1,9 +1,9 @@
 from flask import Flask
-# from boto.s3.connection import S3Connection
+from boto.s3.connection import S3Connection
 import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY']="c25071b35496070b34a024ad6c0cf43ab0ee4174654ccb76845897afe5d8b396"
+app.config['SECRET_KEY'] = S3Connection(os.environ['ML_APPKEY'])
 
 from mokkimatkamittari import routes
