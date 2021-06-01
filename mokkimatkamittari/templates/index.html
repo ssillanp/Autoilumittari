@@ -8,7 +8,7 @@
             {% if form.car.errors %}
                 <td>
                     {% for subfield in form.car %}
-                    {{ subfield(class="field-error") }}<img src="{{ url_for('static', filename=subfield.label.text) }}" alt="">
+                    {{ subfield }}<img src="{{ url_for('static', filename='E' + subfield.label.text) }}" alt="">
                     {% endfor %}
                 </td>
             {% else %}
