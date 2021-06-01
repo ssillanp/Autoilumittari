@@ -14,7 +14,7 @@ class InputIntValidator:
             tst = int(field.data)
         except ValueError:
             raise ValidationError("Anna tiedot kokonaislukuina!")
-        if tst <=0 or tst > 10000:
+        if tst <= 0 or tst > 10000:
             raise ValidationError('Sallitut arvot 1 - 10000 !')
 
 
