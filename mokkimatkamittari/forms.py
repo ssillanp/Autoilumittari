@@ -5,16 +5,17 @@ from wtforms.validators import DataRequired, ValidationError, InputRequired
 
 class InputIntValidator:
     def __init__(self):
-        self.message = "Anna tiedot positiivisina kokonaislukuina!"
+        self.message = None
 
 
     def __call__(self, form, field):
         # print(field.data)
         try:
-            if int(field.data) <=0:
-                raise ValidationError(self.message)
+            tst = int(field.data)
         except ValueError:
-            raise ValidationError(self.message)
+            raise ValidationError("Anna tiedot kokonaislukuina!")
+        if tst <=0 or tst > 10000:
+            raise ValidationError('Sallitut arvot 1 - 10000 !')
 
 
 
