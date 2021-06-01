@@ -17,5 +17,7 @@ def index():
         result = True
     else:
         if form.is_submitted():
-            flash('Täytä kaikki kentät. Tiedot positiivisina kokonaislukuina!')
+            for key, value in form.errors.items():
+                flash(value[0])
+                break
     return render_template('index.html', form=form, result=result, data=data)
