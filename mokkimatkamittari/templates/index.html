@@ -12,16 +12,29 @@
             </td>
         </tr>
         <tr>
+
             <td>{{ form.dist.label }}</td>
-            <td>{{ form.dist(size=20) }}</td>
+            {% if form.dist.errors %}
+                <td>{{ form.dist(class="field-error", size=20) }}</td>
+            {% else %}    
+                <td>{{ form.dist(size=20) }}</td>
+            {% endif %}
         </tr>
         <tr>
             <td>{{ form.speed1.label }}</td>
-            <td>{{ form.speed1(size=20) }}</td>
+            {% if form.speed1.errors %}
+                <td>{{ form.speed1(class="field-error", size=20) }}</td>
+            {% else %}    
+                <td>{{ form.speed1(size=20) }}</td>
+            {% endif %}
         </tr>
         <tr>
             <td>{{ form.speed2.label }}</td>
-            <td>{{ form.speed2(size=20) }}</td>
+            {% if form.speed2.errors %}
+                <td>{{ form.speed2(class="field-error", size=20) }}</td>
+            {% else %}    
+                <td>{{ form.speed2(size=20) }}</td>
+            {% endif %}
         </tr>
         <tr>
              <td></td>
