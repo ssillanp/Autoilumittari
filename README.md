@@ -1,14 +1,15 @@
-#Mökkimatkamittari
-###Solidabis koodihaaste 2021: "autoilumittari"
+# Mökkimatkamittari
+
+### Solidabis koodihaaste 2021: "autoilumittari"
 
 webapp -> https://mokkimatkamittari.herokuapp.com
 
-###Käytetyt teknologiat
+### Käytetyt teknologiat
 - Python 3.9.5
 - Flask + Flask_wtf
 - HTML + CSS
 
-###Asennus
+### Asennus
 
         > git clone https://github.com/ssillanp/Mokkimatkalaskuri.git
         > pip install -r requirements.txt
