@@ -1,4 +1,4 @@
-from mokkimatkamittari import app
+from autoilumittari import app
 
 if __name__ == '__main__':
     app.run()

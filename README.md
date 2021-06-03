@@ -6,7 +6,7 @@ webapp -> https://mokkimatkamittari.herokuapp.com
 
 ### Käytetyt teknologiat
 - Python 3.9.5
-- Flask + Flask_wtf
+- Flask + Flask_wtf (forms)
 - HTML + CSS
 
 ### Asennus

@@ -1,7 +1,7 @@
 from flask import render_template, flash, url_for
-from mokkimatkamittari import app
-from mokkimatkamittari.tripdata import car, trip
-from mokkimatkamittari.forms import TripDataForm
+from autoilumittari import app
+from autoilumittari.tripdata import car, trip
+from autoilumittari.forms import TripDataForm
 
 
 @app.route("/", methods=['GET', 'POST'])
