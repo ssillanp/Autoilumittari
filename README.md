@@ -10,6 +10,9 @@ webapp -> https://mokkimatkamittari.herokuapp.com
 - Flask + Flask_wtf (forms)
 - HTML + CSS
 
+- Käyttöjärjestelmä Ubuntu 20.04 
+- IDE Pycharm community
+
 ### Asennus ja käynnistäminen
 
 Vaatii python asennuksen, mikäli ei asennettuna (https://www.python.org/downloads/)
