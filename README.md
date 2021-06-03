@@ -34,7 +34,7 @@ tai tuotannossa
 
 - Python toteutus, auto- ja laskenta toteutettu python luokkina.
     - car-luokka: sisältää automallin ja kulutustiedot, sekä kulutuskertoimen
-    - trip-luokka: retken pituus, nopeus ja käytetty automalli. Laskee kulutuksen ja käyutetyn ajan. Lisäksi laskenta kahden reissun erotukselle, kulutus ja matka-ajassa, sekä co2 emissiot.
+    - trip-luokka: retken pituus, nopeus ja käytetty automalli. Laskee kulutuksen ja käytetyn ajan. Lisäksi laskenta kahden reissun erotukselle, kulutus ja matka-ajassa, sekä co2 emissiot.
     - flask_wtf forms vaatima "SECRET KEY" käytännön syistä kovakoodattu ja siis avoimesti githubissa. tuotantosovelluksessa ympäristömuuttujana.
 - Web toteutus Python Flask- ja Flask_wtf-kirjastoilla.
 - Sivu HTML templatena ja ulkonäkö CSS
